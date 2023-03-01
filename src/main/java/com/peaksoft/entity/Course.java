@@ -39,4 +39,6 @@ public class Course {
     @OneToOne(cascade = CascadeType.ALL,mappedBy = "course")
     private User user;
 
+    @Transient
+    private Long userId;
 }

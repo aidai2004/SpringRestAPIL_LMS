@@ -13,5 +13,7 @@ public class CourseRequest {
     private String courseName;
     private String durationMonth;
     private Long companyId;
+
+//    private User user;
     private List<Group> groups;
 }

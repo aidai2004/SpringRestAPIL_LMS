@@ -106,7 +106,9 @@ public class StudentServiceImpl implements StudentService {
         List<User>students = userRepository.searchStudentsAndPagination(text1.toUpperCase(), pageable);
         List<StudentResponse>responses = new ArrayList<>();
         for (User student : students) {
-            responses.add(mapToResponse(student));
+            if(student.getRole().equals(Role.STUDENT)) {
+                responses.add(mapToResponse(student));
+            }
         }
         return responses;
 

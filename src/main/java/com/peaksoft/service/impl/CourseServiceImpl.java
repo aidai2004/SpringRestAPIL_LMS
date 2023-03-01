@@ -98,6 +98,9 @@ public class CourseServiceImpl implements CourseService {
             course.setCompany(company);
         }
         course.setGroups(courseRequest.getGroups());
+//        if(courseRequest.getUser().getRole() == Role.INSTRUCTOR){
+//            course
+//        }
         return course;
     }
 
