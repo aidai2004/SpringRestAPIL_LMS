@@ -14,7 +14,7 @@ public interface TeacherService {
     TeacherResponse updateTeacher(Long id, TeacherRequest teacher);
     TeacherResponse getById(Long id);
     void deleteTeacher(Long id);
-    List<CourseResponse> getCoursesByTeacherId(Long id, int page, int size);
+     CourseResponse getCourseByTeacherId(Long id);
 
     List<StudentResponse> quantityOfStudents(Long id, int page, int size);
 }

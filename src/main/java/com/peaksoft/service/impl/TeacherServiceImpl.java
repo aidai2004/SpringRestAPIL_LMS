@@ -80,13 +80,9 @@ public class TeacherServiceImpl implements TeacherService {
     }
 
     @Override
-    public List<CourseResponse> getCoursesByTeacherId(Long id, int page, int size) {
-        Pageable pageable = PageRequest.of(page-1,size);
-        List<Course>courses = userRepository.getCourseByTeacherId(id,pageable);
-        List<CourseResponse>courseResponse = new ArrayList<>();
-        for(Course course1 : courses) {
-            courseResponse.add(mapToResponse(course1));
-        }
+    public CourseResponse getCourseByTeacherId(Long id) {
+        Course course = userRepository.getCourseByTeacherId(id);
+        CourseResponse courseResponse = mapToResponse(course);
         return courseResponse;
     }
 

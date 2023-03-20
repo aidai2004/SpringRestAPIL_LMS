@@ -48,9 +48,8 @@ public class TeacherController {
     }
 
     @GetMapping("/courses/{id}")
-    public List<CourseResponse> courses (@PathVariable(name = "id", required = false) Long id, @RequestParam(value = "page", required = false)
-    int page, @RequestParam(name = "size", required = false) int size ){
-        return teacherService.getCoursesByTeacherId(id,page,size);
+    public CourseResponse courses (@PathVariable(name = "id") Long id ){
+        return teacherService.getCourseByTeacherId(id);
     }
 
 }
